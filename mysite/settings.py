@@ -25,7 +25,7 @@ SECRET_KEY = '@8uu1b%v^8b+b@%w^za+97r*qg__6t!3+%)4rj$pz#3x=b_ri1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'willem.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'studentspot.pythonanywhere.com']
 
 
 # Application definition
