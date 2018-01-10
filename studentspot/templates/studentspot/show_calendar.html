@@ -3,6 +3,18 @@
     <title>Dinner calendar</title>
   </head>
   <body>
-    <p>Here the calendar should be rendered</p>
+    <table style="width:100%"
+    {% for day in days %}
+    <tr>
+      <td>{{ day }}</td>
+      <td>{{ day.status1}}</td>
+      <td>{{ day.status2}}</td>
+      <td>{{ day.status3}}</td>
+      <td>{{ day.status4}}</td>
+      <td>{{ day.status5}}</td>
+    </tr>
+      <br>
+    {% endfor %}
+  </table>
   </body>
 </html>
