@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+%test van Ties
 
 class Day(models.Model):
     date = models.DateField(default=timezone.now, auto_now=False, auto_now_add=False, primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
