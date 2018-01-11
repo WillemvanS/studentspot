@@ -37,3 +37,10 @@ h1, h2, h3, h4 {
     font-size: 25pt;
     margin-right: 25px;
 }
+.cover {
+  background-image: url("https://odis.homeaway.com/odis/listing/a9954777-1870-4dac-9009-255e5a51ea4a.c10.jpg") no-repeat;
+  padding-top:100px;
+  height:auto;
+  width:auto;
+  background-size:cover;
+}
