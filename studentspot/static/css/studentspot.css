@@ -1,11 +1,11 @@
 .page-header {
-    background-color: #4286f4;
+    background-color: #757e8c;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: #d35400;
     font-size: 40pt;
     text-decoration: none;
     text-align: center;
@@ -32,21 +32,8 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #d35400;
     float: right;
     font-size: 25pt;
     margin-right: 25px;
-}
-
-.activity {
-    margin-bottom: 70px;
-}
-
-.activity h1 a, .activity h1 a:visited {
-    color: #000000;
-}
-
-.comment {
-    margin: 20px 0px 20px 20px;
-    border: 2px;
 }
