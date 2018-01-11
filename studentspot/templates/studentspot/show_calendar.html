@@ -1,20 +1,17 @@
-<html>
-  <head>
-    <title>Dinner calendar</title>
-  </head>
-  <body>
-    <table style="width:100%"
-    {% for day in days %}
-    <tr>
-      <td>{{ day }}</td>
-      <td>{{ day.status1}}</td>
-      <td>{{ day.status2}}</td>
-      <td>{{ day.status3}}</td>
-      <td>{{ day.status4}}</td>
-      <td>{{ day.status5}}</td>
-    </tr>
-      <br>
-    {% endfor %}
-  </table>
-  </body>
-</html>
+{% extends 'studentspotapp/base.html' %}
+
+{% block content %}
+<table style="width:100%"
+{% for day in days %}
+<tr>
+  <td>{{ day }}</td>
+  <td>{{ day.status1}}</td>
+  <td>{{ day.status2}}</td>
+  <td>{{ day.status3}}</td>
+  <td>{{ day.status4}}</td>
+  <td>{{ day.status5}}</td>
+</tr>
+  <br>
+{% endfor %}
+</table>
+{% endblock %}

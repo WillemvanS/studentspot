@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-%test van Farida
 
 class Day(models.Model):
     date = models.DateField(default=timezone.now, auto_now=False, auto_now_add=False, primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
@@ -24,6 +23,6 @@ class Day(models.Model):
     status18 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
     status19 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
     status20 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    #hallo hallo test test
+
     def __str__(self):
         return self.date.strftime('%d-%m-%Y')
