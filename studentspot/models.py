@@ -29,6 +29,7 @@ class Day(models.Model):
 
 class House(models.Model):
     houseName = models.CharField(max_length=50, default='house', primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
+    days_forward = models.PositiveIntegerField(default=20)
     student1 = models.CharField(max_length=20, default='empty')
     student2 = models.CharField(max_length=20, default='empty')
     student3 = models.CharField(max_length=20, default='empty')
