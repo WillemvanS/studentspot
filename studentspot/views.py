@@ -9,3 +9,6 @@ def show_calendar(request):
     days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=days_forward)))).filter(date__gte=timezone.now()).order_by('date')
     houses = (House.objects.filter(houseName="Group_9"))
     return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses})
+
+def homepage(request):
+    return render(request, 'studentspot/homepage.html')
