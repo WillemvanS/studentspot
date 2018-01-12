@@ -7,5 +7,4 @@ from . import views
 urlpatterns = [
     url(r'^calendar/$', views.show_calendar, name='show_calendar'),
     url(r'^$', views.homepage, name='homepage'),
-     url(r'^accounts/login/$', views.loginpage, name='login'),
 ]
