@@ -15,3 +15,6 @@ def show_calendar(request):
 
 def homepage(request):
     return render(request, 'studentspot/homepage.html')
+
+def loginpage(request):
+    return render(request, 'studentspot/loginpage.html')

@@ -1,6 +1,7 @@
 {% extends 'studentspot/base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <table style="width:100%; position: absolute; top: 2em;">
 <tr>
   <td>Date</td>
@@ -136,4 +137,6 @@
   <br>
 {% endfor %}
 </table>
+{% else %}
+ <a href="{% url 'login' %}">LOGIN</a>
 {% endblock %}
