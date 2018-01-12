@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 #Renders a html page for show_calendar using the show_calendar.html template and the selected days
-@login_required
+#@login_required
 def show_calendar(request):
     forward = House.objects.get(houseName="Group_9").days_forward #how many days the calendar should show
     for x in range (0, forward):
