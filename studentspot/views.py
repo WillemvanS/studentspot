@@ -14,7 +14,7 @@ def show_calendar(request):
     return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses})
 
 def homepage(request):
-    return render(request, 'studentspot/homepagetest.html')
+    return render(request, 'studentspot/homepage.html')
 
 def loginpage(request):
     return render(request, 'studentspot/loginpage.html')
