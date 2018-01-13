@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.utils import timezone
 from .models import Day, House
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
 
 # Create your views here.
 #Renders a html page for show_calendar using the show_calendar.html template and the selected days
@@ -23,16 +23,15 @@ def homepage(request):
 def login(request):
     return render(request, 'studentspot/login.html')
 
-def signup(request):
+def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('homepage')
+        f = UserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Account created successfully')
+            return redirect('register')
+
     else:
-        form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+        f = UserCreationForm()
+
+    return render(request, 'studentspot/register.html', {'form': f})
