@@ -28,7 +28,7 @@ def register(request):
         f = UserCreationForm(request.POST)
         if f.is_valid():
             f.save()
-            messages.success(request, 'Account created successfully')
+            #messages.success(request, 'Account created successfully')
             return redirect('register')
 
     else:
