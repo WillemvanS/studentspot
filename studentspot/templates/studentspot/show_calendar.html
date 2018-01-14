@@ -3,139 +3,138 @@
 {% block content %}
 {% if not is_member %}
 <table style="width:100%; position: absolute; top: 2em;">
-<tr>
-  <td>Date</td>
-  {% for house in houses %}
-  {% if house.student1 != 'empty' %}
+  <tr>
+    <td>Date</td>
+    {% for house in houses %}
+    {% if house.student1 != 'empty' %}
     <td> {{house.student1}} </td>
-  {% endif %}
-  {% if house.student2 != 'empty' %}
+    {% endif %}
+    {% if house.student2 != 'empty' %}
     <td> {{house.student2}} </td>
-  {% endif %}
-  {% if house.student3 != 'empty' %}
+    {% endif %}
+    {% if house.student3 != 'empty' %}
     <td> {{house.student3}} </td>
-  {% endif %}
-  {% if house.student4 != 'empty' %}
+    {% endif %}
+    {% if house.student4 != 'empty' %}
     <td> {{house.student4}} </td>
-  {% endif %}
-  {% if house.student5 != 'empty' %}
+    {% endif %}
+    {% if house.student5 != 'empty' %}
     <td> {{house.student5}} </td>
-  {% endif %}
-  {% if house.student6 != 'empty' %}
+    {% endif %}
+    {% if house.student6 != 'empty' %}
     <td> {{house.student6}} </td>
-  {% endif %}
-  {% if house.student7 != 'empty' %}
+    {% endif %}
+    {% if house.student7 != 'empty' %}
     <td> {{house.student7}} </td>
-  {% endif %}
-  {% if house.student8 != 'empty' %}
+    {% endif %}
+    {% if house.student8 != 'empty' %}
     <td> {{house.student8}} </td>
-  {% endif %}
-  {% if house.student9 != 'empty' %}
+    {% endif %}
+    {% if house.student9 != 'empty' %}
     <td> {{house.student9}} </td>
-  {% endif %}
-  {% if house.student10 != 'empty' %}
+    {% endif %}
+    {% if house.student10 != 'empty' %}
     <td> {{house.student10}} </td>
-  {% endif %}
-  {% if house.student11 != 'empty' %}
+    {% endif %}
+    {% if house.student11 != 'empty' %}
     <td> {{house.student11}} </td>
-  {% endif %}
-  {% if house.student12 != 'empty' %}
+    {% endif %}
+    {% if house.student12 != 'empty' %}
     <td> {{house.student12}} </td>
-  {% endif %}
-  {% if house.student13 != 'empty' %}
+    {% endif %}
+    {% if house.student13 != 'empty' %}
     <td> {{house.student13}} </td>
-  {% endif %}
-  {% if house.student14 != 'empty' %}
+    {% endif %}
+    {% if house.student14 != 'empty' %}
     <td> {{house.student14}} </td>
-  {% endif %}
-  {% if house.student15 != 'empty' %}
+    {% endif %}
+    {% if house.student15 != 'empty' %}
     <td> {{house.student15}} </td>
-  {% endif %}
-  {% if house.student16 != 'empty' %}
+    {% endif %}
+    {% if house.student16 != 'empty' %}
     <td> {{house.student16}} </td>
-  {% endif %}
-  {% if house.student17 != 'empty' %}
+    {% endif %}
+    {% if house.student17 != 'empty' %}
     <td> {{house.student17}} </td>
-  {% endif %}
-  {% if house.student18 != 'empty' %}
+    {% endif %}
+    {% if house.student18 != 'empty' %}
     <td> {{house.student18}} </td>
-  {% endif %}
-  {% if house.student19 != 'empty' %}
+    {% endif %}
+    {% if house.student19 != 'empty' %}
     <td> {{house.student19}} </td>
-  {% endif %}
-  {% if house.student20 != 'empty' %}
+    {% endif %}
+    {% if house.student20 != 'empty' %}
     <td> {{house.student20}} </td>
-  {% endif %}
-  {% endfor %}
-</tr>
-{% for day in days %}
-<tr>
-  {% for house in houses %}
-  <td>{{ day }}</td>
-  {% if house.student1 != 'empty' %}
+    {% endif %}
+    {% endfor %}
+  </tr>
+  {% for day in days %}
+  <tr>
+    {% for house in houses %}
+    <td>{{ day }}</td>
+    {% if house.student1 != 'empty' %}
     <td> {{day.status1}} </td>
-  {% endif %}
-  {% if house.student2 != 'empty' %}
+    {% endif %}
+    {% if house.student2 != 'empty' %}
     <td> {{day.status2}} </td>
-  {% endif %}
-  {% if house.student3 != 'empty' %}
+    {% endif %}
+    {% if house.student3 != 'empty' %}
     <td> {{day.status3}} </td>
-  {% endif %}
-  {% if house.student4 != 'empty' %}
+    {% endif %}
+    {% if house.student4 != 'empty' %}
     <td> {{day.status4}} </td>
-  {% endif %}
-  {% if house.student5 != 'empty' %}
+    {% endif %}
+    {% if house.student5 != 'empty' %}
     <td> {{day.status5}} </td>
-  {% endif %}
-  {% if house.student6 != 'empty' %}
+    {% endif %}
+    {% if house.student6 != 'empty' %}
     <td> {{day.status6}} </td>
-  {% endif %}
-  {% if house.student7 != 'empty' %}
+    {% endif %}
+    {% if house.student7 != 'empty' %}
     <td> {{day.status7}} </td>
-  {% endif %}
-  {% if house.student8 != 'empty' %}
+    {% endif %}
+    {% if house.student8 != 'empty' %}
     <td> {{day.status8}} </td>
-  {% endif %}
-  {% if house.student9 != 'empty' %}
+    {% endif %}
+    {% if house.student9 != 'empty' %}
     <td> {{day.status9}} </td>
-  {% endif %}
-  {% if house.student10 != 'empty' %}
+    {% endif %}
+    {% if house.student10 != 'empty' %}
     <td> {{day.status10}} </td>
-  {% endif %}
-  {% if house.student11 != 'empty' %}
+    {% endif %}
+    {% if house.student11 != 'empty' %}
     <td> {{day.status11}} </td>
-  {% endif %}
-  {% if house.student12 != 'empty' %}
+    {% endif %}
+    {% if house.student12 != 'empty' %}
     <td> {{day.status12}} </td>
-  {% endif %}
-  {% if house.student13 != 'empty' %}
+    {% endif %}
+    {% if house.student13 != 'empty' %}
     <td> {{day.status13}} </td>
-  {% endif %}
-  {% if house.student14 != 'empty' %}
+    {% endif %}
+    {% if house.student14 != 'empty' %}
     <td> {{day.status14}} </td>
-  {% endif %}
-  {% if house.student15 != 'empty' %}
+    {% endif %}
+    {% if house.student15 != 'empty' %}
     <td> {{day.status15}} </td>
-  {% endif %}
-  {% if house.student16 != 'empty' %}
+    {% endif %}
+    {% if house.student16 != 'empty' %}
     <td> {{day.status16}} </td>
-  {% endif %}
-  {% if house.student17 != 'empty' %}
+    {% endif %}
+    {% if house.student17 != 'empty' %}
     <td> {{day.status17}} </td>
-  {% endif %}
-  {% if house.student18 != 'empty' %}
+    {% endif %}
+    {% if house.student18 != 'empty' %}
     <td> {{day.status18}} </td>
-  {% endif %}
-  {% if house.student19 != 'empty' %}
+    {% endif %}
+    {% if house.student19 != 'empty' %}
     <td> {{day.status19}} </td>
-  {% endif %}
-  {% if house.student20 != 'empty' %}
+    {% endif %}
+    {% if house.student20 != 'empty' %}
     <td> {{day.status20}} </td>
-  {% endif %}
-</tr>
-{% endfor %}
-  <br>
-{% endfor %}
+    {% endif %}
+    {% endfor %}
+  </tr>
+  {% endfor %}
 </table>
 {% else %}
 <p> You are not a member of Test Huis</p>
