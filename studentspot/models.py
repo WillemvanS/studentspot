@@ -30,7 +30,7 @@ class Day(models.Model):
 
 class Slot(models.Model):
     #student = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    day = models.ForeignKey(Day, on_delete=models.DO_NOTHING)
+    #day = models.ForeignKey(Day, on_delete=models.DO_NOTHING)
     slot = models.CharField(max_length=3, default='enm')
 
     def __str__(self):
