@@ -41,7 +41,7 @@ def add_to_group(request):
    my_group.user_set.add(request.user.id)
    return render(request, 'studentspot/homepage.html')
 
-def check_group():
-   my_group = Group.objects.get(name='Test Huis')
-   if my_group in request.user.groups.all():
-       return True
+#def check_group():
+   #my_group = Group.objects.get(name='Test Huis')
+   #if my_group in request.user.groups.all():
+       #return True
