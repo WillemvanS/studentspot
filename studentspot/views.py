@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import Day, House
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 #Renders a html page for show_calendar using the show_calendar.html template and the selected days
@@ -28,6 +29,8 @@ def register(request):
         f = UserCreationForm(request.POST)
         if f.is_valid():
             f.save()
+            my_group = Group.objects.get(name='Test Huis')
+            my_group.user_set.add(f.username)
             #messages.success(request, 'Account created successfully')
             return redirect('register')
 
