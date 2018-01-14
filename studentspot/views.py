@@ -16,7 +16,8 @@ def show_calendar(request):
             Day.objects.create(date=(timezone.now() + timezone.timedelta(days=x)))
     days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=forward)))).filter(date__gte=timezone.now()).order_by('date')
     houses = (House.objects.filter(houseName="Group_9"))
-    my_group = request.user.groups.name
+    group = request.user.groups.name
+    users = group.user_set.all()
     return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses})
 
 def homepage(request):

@@ -142,7 +142,7 @@
   <tr>
     <td>Date</td>
     {% for group in Groups %}
-    {% for user in User.objects.filter(groups__name=my_group) %}
+    {% for user in users %}
     <td> {{user.get_username}} </td>
     {% endif %}
     {% endfor %}
