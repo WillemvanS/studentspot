@@ -18,7 +18,7 @@ def show_calendar(request):
     houses = (House.objects.filter(houseName="Group_9"))
     group = request.user.groups.all()[0]
     users = group.user_set.all()
-    return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses})
+    return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses, 'group' : group, 'users' : users})
 
 def homepage(request):
     return render(request, 'studentspot/homepage.html')

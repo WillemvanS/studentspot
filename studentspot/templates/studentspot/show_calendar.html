@@ -138,10 +138,11 @@
 </table>
 <table style="width:100%; position: absolute; top: 20em;">
   <tr>
+    {{ group }}
     <td>Date</td>
     {% for group in Groups %}
     {% for user in users %}
-    <td> {{user.get_username}} </td>
+    <td> {{ user.get_username }} </td>
     {% endfor %}
     {% endfor %}
   </tr>
