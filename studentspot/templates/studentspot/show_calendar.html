@@ -142,7 +142,7 @@
   <tr>
     <td>Date</td>
     {% for group in Groups %}
-    {% if user.Groups.get(pk=1) != 'empty' %}
+    {% for user in User.objects.filter(groups__name='Test Huis') %}
     <td> {{user.get_username}} </td>
     {% endif %}
     {% endfor %}
