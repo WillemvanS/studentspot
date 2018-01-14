@@ -13,7 +13,7 @@ def show_calendar(request):
     group = request.user.groups.all()[0]
     users = group.user_set.all()
     forward = House.objects.get(houseName="Group_9").days_forward #how many days the calendar should show
-    forward = 10
+    forward = 30
     for x in range (0, forward):
         if not Day.objects.filter(date=(timezone.now() + timezone.timedelta(days=x))).exists():
             currentday = Day(date=(timezone.now() + timezone.timedelta(days=x)))
