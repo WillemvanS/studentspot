@@ -26,7 +26,6 @@ class Day(models.Model):
     status18 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
     status19 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
     status20 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    teststatus = models.ForeignKey(Slot)
 
     def __str__(self):
         return self.date.strftime('%d-%m-%Y')
