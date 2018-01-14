@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 class Day(models.Model):
     date = models.DateField(default=timezone.now, auto_now=False, auto_now_add=False, primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
@@ -52,3 +55,22 @@ class House(models.Model):
     student20 = models.CharField(max_length=20, default='empty')
     def __str__(self):
         return self.houseName
+
+class UserPlus(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    status1 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+    status2 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+    status3 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+    status4 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+    status5 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+    status6 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+    status7 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
+
+    @receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()

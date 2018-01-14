@@ -145,11 +145,9 @@
   </tr>
   {% for day in days %}
   <tr>
-    {% for house in houses %}
     <td>{{ day }}</td>
-    {% if house.student1 != 'empty' %}
+    {% for user in users %}
     <td> {{day.status1}} </td>
-    {% endif %}
     {% if house.student2 != 'empty' %}
     <td> {{day.status2}} </td>
     {% endif %}
@@ -209,6 +207,5 @@
     {% endif %}
     {% endfor %}
   </tr>
-  {% endfor %}
 </table>
 {% endblock %}
