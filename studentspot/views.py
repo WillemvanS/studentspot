@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import Day, House
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
 #Renders a html page for show_calendar using the show_calendar.html template and the selected days
+@user_passes_test(is_member)
 def show_calendar(request):
     forward = House.objects.get(houseName="Group_9").days_forward #how many days the calendar should show
     for x in range (0, forward):
@@ -40,3 +41,6 @@ def add_to_group(request):
    my_group = Group.objects.get(name='Test Huis')
    my_group.user_set.add(request.user.id)
    return render(request, 'studentspot/homepage.html')
+
+def is_member(user):
+    return user.groups.filter(name='Test Huis').exists()
