@@ -36,6 +36,9 @@ class Slot(models.Model):
     day = models.ForeignKey(Day)
     slot = models.CharField(max_length=3, default='enm')
 
+    def __str__(self):
+        return self.student+self.day
+
 class House(models.Model):
     houseName = models.CharField(max_length=50, default='house', primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
     days_forward = models.PositiveIntegerField(default=20)
@@ -59,6 +62,6 @@ class House(models.Model):
     student18 = models.CharField(max_length=20, default='empty')
     student19 = models.CharField(max_length=20, default='empty')
     student20 = models.CharField(max_length=20, default='empty')
-    
+
     def __str__(self):
         return self.houseName
