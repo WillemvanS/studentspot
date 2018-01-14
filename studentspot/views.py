@@ -44,4 +44,4 @@ def add_to_group(request):
 def check_group():
    my_group = Group.objects.get(name='Test Huis')
    if my_group in request.user.groups.all():
-   return True else False
+       return True else False
