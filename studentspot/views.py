@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 #Renders a html page for show_calendar using the show_calendar.html template and the selected days
-@user_passes_test(is_member)
+@login_required
 def show_calendar(request):
     forward = House.objects.get(houseName="Group_9").days_forward #how many days the calendar should show
     for x in range (0, forward):
@@ -16,6 +16,7 @@ def show_calendar(request):
             Day.objects.create(date=(timezone.now() + timezone.timedelta(days=x)))
     days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=forward)))).filter(date__gte=timezone.now()).order_by('date')
     houses = (House.objects.filter(houseName="Group_9"))
+    my_group = request.user.groups.name
     return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses})
 
 def homepage(request):
