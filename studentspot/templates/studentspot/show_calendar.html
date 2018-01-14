@@ -5,7 +5,6 @@
 <table style="width:100%; position: absolute; top: 2em;">
   <tr>
     <td>Date</td>
-#dit moet users in groups worden
     {% for house in houses %}
     {% if house.student1 != 'empty' %}
     <td> {{house.student1}} </td>
@@ -72,7 +71,6 @@
   {% for day in days %}
   <tr>
     {% for house in houses %}
-#dit moet de status van een student laten zien
     <td>{{ day }}</td>
     {% if house.student1 != 'empty' %}
     <td> {{day.status1}} </td>
@@ -138,7 +136,7 @@
   </tr>
   {% endfor %}
 </table>
-<table style="width:100%; position: absolute; top: 2em;">
+<table style="width:100%; position: absolute; top: 20em;">
   <tr>
     <td>Date</td>
     {% for group in Groups %}
@@ -150,7 +148,6 @@
   {% for day in days %}
   <tr>
     {% for house in houses %}
-#dit moet de status van een student laten zien
     <td>{{ day }}</td>
     {% if house.student1 != 'empty' %}
     <td> {{day.status1}} </td>
