@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Studentspot</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -14,7 +14,7 @@
     {% if user.is_authenticated %}
     <h5 class="top-menu"><a href="{% url 'logout' %}">Log out</a></h5>
     {% else %}
-    <h5 class="top-menu">You are not logged in</h5>
+    <h5 class="top-menu"><a href="{% url 'login' %}">Log in</a></h5>
     {% endif %}
     <h1><span><img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/house-icon.png" width="45" height="45"></span><a href="{% url 'homepage' %}"><strong> Studentspot </strong></a></h1>
   </div>

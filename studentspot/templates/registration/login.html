@@ -4,7 +4,6 @@
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
-   <a href="{% url 'register' %}">Register at studentspot</a>
 <form method="post" action="{% url 'login' %}">
   {% csrf_token %}
   <table>
@@ -21,4 +20,6 @@
   <input type="submit" value="login" />
   <input type="hidden" name="next" value="{{ next }}" />
 </form>
+<br>
+<p>New at Studentspot?</p><a href="{% url 'register' %}">Register now!</a>
 {% endblock %}
