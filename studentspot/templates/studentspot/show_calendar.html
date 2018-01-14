@@ -138,12 +138,8 @@
 </table>
 <table style="width:100%; position: absolute; top: 20em;">
   <tr>
-    {{ group }}
-    {{ users }}
-    {{ allgroups }}
     <td>Date</td>
     {% for user in users %}
-    <td> testp </td>
     <td> {{ user.get_username }} </td>
     {% endfor %}
   </tr>
