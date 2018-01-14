@@ -1,7 +1,7 @@
 {% extends 'studentspot/base.html' %}
 
 {% block content %}
-{% if not is_member %}
+{% if request.user|has_group:"Test Huis" %}
 <table style="width:100%; position: absolute; top: 2em;">
   <tr>
     <td>Date</td>

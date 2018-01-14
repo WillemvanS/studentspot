@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5 {
 
 .save {
     float: right;
+    text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
 .post-form textarea, .post-form input {
@@ -52,7 +53,7 @@ h1, h2, h3, h4, h5 {
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #474747;
 }
 
 /* Custom default button */
@@ -73,9 +74,6 @@ a:hover {
 html,
 body {
   height: 100%;
-}
-body {
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
