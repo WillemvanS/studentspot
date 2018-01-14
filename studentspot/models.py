@@ -1,8 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 class Day(models.Model):
     date = models.DateField(default=timezone.now, auto_now=False, auto_now_add=False, primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
@@ -31,8 +29,8 @@ class Day(models.Model):
         return self.date.strftime('%d-%m-%Y')
 
 class Slot(models.Model):
-    student = models.ForeignKey(User, on_delete=models.CASCADE)
-    day = models.ForeignKey(Day, on_delete=models.CASCADE)
+    student = models.ForeignKey(User, on_delete=SET_NULL)
+    day = models.ForeignKey(Day, on_delete=SET_NULL)
     slot = models.CharField(max_length=3, default='enm')
 
     def __str__(self):
