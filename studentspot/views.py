@@ -19,7 +19,7 @@ def show_calendar(request):
     group = request.user.groups.all()[0]
     allgroups = Group.objects.all()
     users = group.user_set.all()
-    return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses, 'group' : group, 'users' : users})
+    return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses, 'group' : group, 'users' : users, 'allgroups' : allgroups})
 
 def homepage(request):
     return render(request, 'studentspot/homepage.html')
