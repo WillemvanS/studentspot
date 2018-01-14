@@ -144,7 +144,7 @@
     {% for group in Groups %}
     {% for user in users %}
     <td> {{user.get_username}} </td>
-    {% endif %}
+    {% endfor %}
     {% endfor %}
   </tr>
   {% for day in days %}
