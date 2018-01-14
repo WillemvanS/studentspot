@@ -35,6 +35,7 @@ class Slot(models.Model):
     day = models.ForeignKey(Day)
     slot = models.CharField(max_length=3, default='enm')
 
+
     def __str__(self):
         return self.student+self.day
 
