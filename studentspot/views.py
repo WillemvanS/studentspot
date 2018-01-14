@@ -29,8 +29,6 @@ def register(request):
         f = UserCreationForm(request.POST)
         if f.is_valid():
             f.save()
-            my_group = Group.objects.get(name='Test Huis')
-            my_group.user_set.add(f.username)
             #messages.success(request, 'Account created successfully')
             return redirect('register')
 
@@ -38,3 +36,8 @@ def register(request):
         f = UserCreationForm()
 
     return render(request, 'studentspot/register.html', {'form': f})
+
+def add_to_group(request):
+   my_group = Group.objects.get(name='Test Huis')
+   my_group.user_set.add(request.user.get_username())
+   return render(request, 'studentspot/homepage.html')
