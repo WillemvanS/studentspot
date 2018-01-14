@@ -40,3 +40,6 @@ def add_to_group(request):
    my_group = Group.objects.get(name='Test Huis')
    my_group.user_set.add(request.user.id)
    return render(request, 'studentspot/homepage.html')
+
+ def is_member(user):
+    return user.groups.filter(name='Test Huis').exists()
