@@ -40,7 +40,6 @@ h1, h2, h3, h4, h5 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #d35400;
     float: right;
-    font-size: 25pt;
     margin-right: 25px;
 }
 .cover {
