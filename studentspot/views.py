@@ -19,7 +19,7 @@ def show_calendar(request):
             currentday = Day(date=(timezone.now() + timezone.timedelta(days=x)))
             currentday.save()
             for user in users:
-                  Slot.objects.create(student=user, day=currentday)
+                  Slot.objects.create(day=currentday)
     days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=forward)))).filter(date__gte=timezone.now()).order_by('date')
     houses = (House.objects.filter(houseName="Group_9"))
     return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses, 'group' : group, 'users' : users})

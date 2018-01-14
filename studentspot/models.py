@@ -29,7 +29,7 @@ class Day(models.Model):
         return self.date.strftime('%d-%m-%Y')
 
 class Slot(models.Model):
-    student = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    #student = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     day = models.ForeignKey(Day, on_delete=models.DO_NOTHING)
     slot = models.CharField(max_length=3, default='enm')
 
