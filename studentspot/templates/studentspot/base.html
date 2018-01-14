@@ -13,9 +13,9 @@
   <div class="page-header">
     <h1><span><img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/house-icon.png" width="45" height="45"></span><a href="{% url 'homepage' %}"><strong> Studentspot </strong></a></h1>
     {% if user.is_authenticated %}
-    <h5 style="color:white;"><a href="{% url 'logout' %}">Log out</a></h5>
+    <h5 class="top-menu"><a href="{% url 'logout' %}">Log out</a></h5>
     {% else %}
-    <p>You are not logged in</p>
+    <h5 class="top-menu">You are not logged in</h5>
     {% endif %}
   </div>
   <div class="content container">
