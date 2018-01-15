@@ -55,22 +55,3 @@ class House(models.Model):
     student20 = models.CharField(max_length=20, default='empty')
     def __str__(self):
         return self.houseName
-
-class UserPlus(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    status1 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    status2 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    status3 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    status4 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    status5 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    status6 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-    status7 = models.CharField(max_length=3, default='enm') #Should be either ewm, enm or koo
-
-    @receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
