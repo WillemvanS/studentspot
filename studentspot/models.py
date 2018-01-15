@@ -28,13 +28,13 @@ class Day(models.Model):
     def __str__(self):
         return self.date.strftime('%d-%m-%Y')
 
-class Slot(models.Model):
+#class Slot(models.Model):
     #student = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     #day = models.ForeignKey(Day, on_delete=models.DO_NOTHING)
-    slot = models.CharField(max_length=3, default='enm')
+    #slot = models.CharField(max_length=3, default='enm')
 
-    def __str__(self):
-        return self.student+self.day
+    #def __str__(self):
+        #return self.student+self.day
 
 class House(models.Model):
     houseName = models.CharField(max_length=50, default='house', primary_key=True) #The date should not be changed automaticaly and is the primary key of each object a defautl value is mandatory
