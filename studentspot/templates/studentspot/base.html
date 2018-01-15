@@ -12,6 +12,7 @@
 <body>
   <div class="page-header">
     {% if user.is_authenticated %}
+    {{ user.get_username }}
     <a href="{% url 'logout' %}" class="top-menu btn btn-lg btn-secondary">Log out</a>
     {% else %}
     <h5 class="top-menu"><a href="{% url 'login' %}">Log in</a></h5>

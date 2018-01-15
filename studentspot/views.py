@@ -11,15 +11,16 @@ from django.contrib.auth.forms import UserCreationForm
 @login_required
 def show_calendar(request):
     #forward = House.objects.get(houseName="Group_9").days_forward #how many days the calendar should show
-    forward = 7
-    for x in range (0, forward):
-        if not Day.objects.filter(date=(timezone.now() + timezone.timedelta(days=x))).exists():
-            Day.objects.create(date=(timezone.now() + timezone.timedelta(days=x)))
-    days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=forward)))).filter(date__gte=timezone.now()).order_by('date')
     houses = House.objects.all()
     group = request.user.groups.all()[0]
     users = group.user_set.all()
-    return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses, 'group' : group, 'users' : users})
+    forward = 7
+    for x in range (0, forward):
+        for user in users:
+            if not Day.objects.filter(date=(timezone.now() + timezone.timedelta(days=x)), student=user.get_username).exists():
+                Day.objects.create(date=(timezone.now() + timezone.timedelta(days=x)), student=user.get_username)
+    #days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=forward)))).filter(date__gte=timezone.now()).order_by('date')
+    return render(request, 'studentspot/show_calendar.html', {'houses' : houses, 'group' : group, 'users' : users}) #'days': days, 
 
 def homepage(request):
     return render(request, 'studentspot/homepage.html')
