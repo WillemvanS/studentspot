@@ -21,7 +21,7 @@ def show_calendar(request):
             for user in users:
                   Slot.objects.create()
     days = (Day.objects.filter(date__lte=(timezone.now() + timezone.timedelta(days=forward)))).filter(date__gte=timezone.now()).order_by('date')
-    houses = (House.objects.filter(houseName="Group_9"))
+    houses = (House.objects.filter(houseName="house"))
     return render(request, 'studentspot/show_calendar.html', {'days': days, 'houses' : houses, 'group' : group, 'users' : users})
 
 def homepage(request):
